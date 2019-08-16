@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>One Dino</title>
+</head>
+<body>
+  <% if(foundDino) { %>
+    <h1>One Dino: <%= foundDino.name %></h1>
+    <h2>
+      <%= foundDino.name %> is a <%= foundDino.type %>.
+      In the dinos table, the id is <%= foundDino.id %>.
+    </h2>
+  <% } else { %>
+    <h1>Oh no... no dino was found! Try again!!</h1>
+  <% } %>
+</body>
+</html>

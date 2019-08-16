@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HOME PAGE</title>
+</head>
+<body>
+  <h1>List of all the DINOS</h1>
+  <ul>
+    <% dinosArr.forEach(d => { %>
+      <li>
+        <a href="/<%= d.id %>">
+          <%= d.name %>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
