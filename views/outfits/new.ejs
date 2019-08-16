@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Outfit</title>
+</head>
+<body>
+  <h1>Make a New Outfit</h1>
+
+  <form method="POST" action="/outfits">
+    <div>
+      Color: <input type="text" name="color">
+    </div>
+    <div>
+      Size: <input type="number" name="size">
+    </div>
+    <div>
+      Type: <input type="text" name="type">
+    </div>
+    <div>
+      Material: <input type="text" name="material">
+    </div>
+    <div>
+      Dino Owner:
+      <select name="dinoId">
+        <% dinos.forEach(d => { %>
+          <option value="<%= d.id %>"><%= d.name %></option>
+        <% }) %>
+      </select>
+    </div>
+    <div>
+      <input type="submit" value="New Clothing!">
+    </div>
+  </form>
+</body>
+</html>

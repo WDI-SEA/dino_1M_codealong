@@ -8,11 +8,12 @@
   <ul>
     <% dinosArr.forEach(d => { %>
       <li>
-        <a href="/<%= d.id %>">
+        <a href="/dinos/<%= d.id %>">
           <%= d.name %>
         </a>
       </li>
     <% }) %>
   </ul>
+  <a href="/dinos/new">Add a New Dino!</a>
 </body>
 </html>

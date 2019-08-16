@@ -7,6 +7,10 @@ let db = require('./models')
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 
+// Controller
+app.use('/dinos', require('./controllers/dinos'))
+app.use('/outfits', require('./controllers/outfits'))
+
 // Routes
 app.get('/', (req, res) => {
   db.dino.findAll()
@@ -16,37 +20,6 @@ app.get('/', (req, res) => {
   .catch(err => {
     console.log(err)
     res.send('An error happened')
-  })
-})
-
-app.get('/new', (req, res) => {
-  res.render('new')
-})
-
-app.get('/:id', (req, res) => {
-  if (parseInt(req.params.id)) {
-    db.dino.findByPk(req.params.id)
-    .then(foundDino => {
-      res.render('show', { foundDino })
-    })
-    .catch(err => {
-      console.log(err)
-      res.send('An error happened')
-    })
-  }
-  else {
-    res.send('Something went wrong')
-  }
-})
-
-app.post('/dinos', (req, res) => {
-  db.dino.create(req.body)
-  .then(createdDino => {
-    res.redirect('/')
-  })
-  .catch(err => {
-    console.log(err)
-    res.send('Uh oh sorry')
   })
 })
 

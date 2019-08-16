@@ -10,6 +10,16 @@
       <%= foundDino.name %> is a <%= foundDino.type %>.
       In the dinos table, the id is <%= foundDino.id %>.
     </h2>
+    <hr>
+    <h2>Outfits Owned by <%= foundDino.name %></h2>
+    <% if (foundDino.outfits && foundDino.outfits.length > 0) { %>
+      <p>Check out these <%= foundDino.outfits.length %> outfits!</p>
+      <% foundDino.outfits.forEach(o => { %>
+        <h3><%= o.color %> <%= o.type %></h3>
+      <% }) %>
+    <% } else { %>
+      <h3>Oh sad... this one has no clothing</h3>
+    <% } %>
   <% } else { %>
     <h1>Oh no... no dino was found! Try again!!</h1>
   <% } %>

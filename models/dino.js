@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   dino.associate = function(models) {
     // associations can be defined here
+    models.dino.hasMany(models.outfit);
   };
   return dino;
 };

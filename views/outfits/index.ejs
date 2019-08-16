@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Outfits</title>
+</head>
+<body>
+  <h1>Show All Outfits</h1>
+
+  <% outfits.forEach(o => { %>
+    <h2>
+      <a href="/outfits/<%= o.id %>">
+        <%= o.color %> <%= o.type %>
+      </a>
+    </h2>
+  <% }) %>
+</body>
+</html>
